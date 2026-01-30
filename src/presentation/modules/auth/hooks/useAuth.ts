@@ -1,3 +1,4 @@
+import { clearAuthStorage, getAuthHeader } from "@/src/application/auth/helpers/token.helper";
 import { IUser } from "@/src/core/interfaces/user/user.interface";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -58,12 +59,6 @@ export function useAuth() {
         return localStorage.getItem('accessToken');
     };
 
-    const getAuthHeader = (): string | null => {
-        const token = getToken();
-        const tokenType = localStorage.getItem('tokenType') || 'Bearer';
-        return token ? `${tokenType} ${token}` : null;
-    };
-
     return {
         user,
         isAuthenticated,
@@ -73,5 +68,6 @@ export function useAuth() {
         checkAuth,
         getToken,
         getAuthHeader,
+        clearAuthStorage
     };
 }

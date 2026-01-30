@@ -53,3 +53,18 @@ html {
     font-size: 13px;
   }
 }
+
+.orders-table .p-datatable-thead > tr > th {
+  background-color: #2563eb !important; /* bg-gray-500 */
+  color: #e5e7eb !important; /* text-gray-200 */
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.orders-table .p-sortable-column-icon {
+  color: #e5e7eb !important;
+}
+
+.orders-table .p-datatable-thead > tr > th.p-sortable-column:hover {
+  background-color: #2563eb !important; /* Hover más oscuro */
+}

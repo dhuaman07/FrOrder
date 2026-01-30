@@ -1,13 +1,10 @@
 export interface ApiResponse<T = any> {
-  isSuccess: boolean;  // ← Cambiado de "success" a "isSuccess"
+  isSuccess: boolean; 
   message: string;
   data?: T;
   errors?: string[];
 }
 
-/**
- * Respuesta paginada
- */
 export interface PaginatedResponse<T> {
   data: T[];
   total: number;
@@ -18,9 +15,6 @@ export interface PaginatedResponse<T> {
   hasPrevious: boolean;
 }
 
-/**
- * Error de API
- */
 export interface ApiError {
   code: string;
   message: string;
@@ -28,9 +22,6 @@ export interface ApiError {
   statusCode?: number;
 }
 
-/**
- * Metadatos de paginación
- */
 export interface PaginationParams {
   page: number;
   limit: number;
@@ -38,9 +29,6 @@ export interface PaginationParams {
   sortOrder?: 'asc' | 'desc';
 }
 
-/**
- * Filtros genéricos
- */
 export interface FilterParams {
   search?: string;
   status?: string;
